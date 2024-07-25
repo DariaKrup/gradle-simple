@@ -3,12 +3,11 @@ import static org.junit.Assert.*;
 
 
 public class SimpleTest {
-
     @Test
     public void testConcatenate() {
-        String result = "one";
-        result = result.concat("two");
+        mathService = new MathService();
+        int result = mathService.multiply(2, 4);
 
-        assertEquals("onetwo", result);
+        assertThat(result, equalTo(8));
     }
 }
