@@ -2,7 +2,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 
-public class Test {
+public class SimpleTest {
 
     @Test
     public void testConcatenate() {
