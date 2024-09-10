@@ -45,6 +45,16 @@ project {
             }
         }
         azureConnection {
+            id = "AzureArtifactsGradleSimple_AzureCloud"
+            name = "Azure Cloud"
+            connectionId = "AzureArtifactsGradleSimple_AzureCloud"
+            credentialsType = msal {
+                authorityUrl = "https://login.microsoftonline.com/080e4d1b-3521-4847-94da-37050321d1ad"
+                clientId = "b6f82b73-e2ed-4a4a-8091-2f150dc41274"
+                clientSecret = "credentialsJSON:68eb3c3c-c0a1-4694-af1f-92f7f89081f5"
+            }
+        }
+        azureConnection {
             id = "AzureArtifactsGradleSimple_AzureCloudLocal"
             name = "Azure Cloud (Local)"
             connectionId = "AzureArtifactsGradleSimple_AzureCloudLocal"
