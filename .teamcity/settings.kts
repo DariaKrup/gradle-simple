@@ -1,6 +1,7 @@
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
 import jetbrains.buildServer.configs.kotlin.buildSteps.gradle
+import jetbrains.buildServer.configs.kotlin.projectFeatures.awsConnection
 import jetbrains.buildServer.configs.kotlin.projectFeatures.azureStorage
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 
@@ -33,6 +34,14 @@ project {
     buildType(Build)
 
     features {
+        awsConnection {
+            id = "AmazonWebServicesAws_2"
+            name = "Amazon Web Services (AWS)"
+            credentialsType = static {
+                accessKeyId = "AKIA5JH2VERVI62P5XDY"
+                secretAccessKey = "credentialsJSON:b6bf9554-612c-4b76-b5f9-29e715daa4d2"
+            }
+        }
         azureStorage {
             id = "AzureLocalStorageGradle"
             storageName = "Local Azure Storage"
