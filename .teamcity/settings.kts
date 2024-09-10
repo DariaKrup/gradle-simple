@@ -42,8 +42,6 @@ project {
             multipartThreshold = "10MB"
             multipartChunksize = "12MB"
             cdnEndpoint = "https://artifacts.azureedge.net"
-            computeMD5 = true
-            param("use_cdn", "true")
         }
     }
 }
