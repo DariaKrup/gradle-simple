@@ -2,6 +2,7 @@ import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
 import jetbrains.buildServer.configs.kotlin.buildSteps.gradle
 import jetbrains.buildServer.configs.kotlin.projectFeatures.awsConnection
+import jetbrains.buildServer.configs.kotlin.projectFeatures.azureConnection
 import jetbrains.buildServer.configs.kotlin.projectFeatures.azureStorage
 import jetbrains.buildServer.configs.kotlin.projectFeatures.s3Storage
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
@@ -42,6 +43,12 @@ project {
                 accessKeyId = "AKIA5JH2VERVI62P5XDY"
                 secretAccessKey = "credentialsJSON:b6bf9554-612c-4b76-b5f9-29e715daa4d2"
             }
+        }
+        azureConnection {
+            id = "AzureArtifactsGradleSimple_AzureCloudLocal"
+            name = "Azure Cloud (Local)"
+            connectionId = "AzureArtifactsGradleSimple_AzureCloudLocal"
+            credentialsType = default()
         }
         azureStorage {
             id = "AzureLocalStorageGradle"
