@@ -3,6 +3,7 @@ import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
 import jetbrains.buildServer.configs.kotlin.buildSteps.gradle
 import jetbrains.buildServer.configs.kotlin.projectFeatures.awsConnection
 import jetbrains.buildServer.configs.kotlin.projectFeatures.azureStorage
+import jetbrains.buildServer.configs.kotlin.projectFeatures.s3Storage
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 
 /*
@@ -51,6 +52,16 @@ project {
             multipartThreshold = "10MB"
             multipartChunksize = "12MB"
             cdnEndpoint = "https://artifacts.azureedge.net"
+        }
+        s3Storage {
+            id = "S3_atrifacts"
+            storageName = "S3 Storage"
+            bucketName = "tc-dkrupkina-limited-access"
+            forceVirtualHostAddressing = true
+            awsEnvironment = default {
+                awsRegionName = "eu-west-1"
+            }
+            connectionId = "AmazonWebServicesAws_2"
         }
     }
 }
