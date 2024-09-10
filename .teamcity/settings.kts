@@ -75,8 +75,9 @@ project {
             storageName = "S3 Storage"
             bucketName = "tc-dkrupkina-limited-access"
             forceVirtualHostAddressing = true
+            multipartThreshold = "5 G B"
+            multipartChunksize = "5 G B"
             awsEnvironment = default {
-                awsRegionName = "eu-west-1"
             }
             connectionId = "AmazonWebServicesAws_2"
         }
