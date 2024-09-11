@@ -1,6 +1,7 @@
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
 import jetbrains.buildServer.configs.kotlin.buildSteps.gradle
+import jetbrains.buildServer.configs.kotlin.projectFeatures.activeStorage
 import jetbrains.buildServer.configs.kotlin.projectFeatures.awsConnection
 import jetbrains.buildServer.configs.kotlin.projectFeatures.azureConnection
 import jetbrains.buildServer.configs.kotlin.projectFeatures.azureStorage
@@ -69,6 +70,10 @@ project {
             multipartThreshold = "10MB"
             multipartChunksize = "12MB"
             cdnEndpoint = "https://artifacts.azureedge.net"
+        }
+        activeStorage {
+            id = "PROJECT_EXT_23"
+            activeStorageID = "S3_atrifacts"
         }
         s3Storage {
             id = "S3_atrifacts"
