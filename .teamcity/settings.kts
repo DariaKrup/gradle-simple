@@ -86,6 +86,23 @@ project {
             }
             connectionId = "AmazonWebServicesAws_2"
         }
+        feature {
+            id = "arm-1"
+            type = "CloudProfile"
+            param("clientId", "b6f82b73-e2ed-4a4a-8091-2f150dc41274")
+            param("secure:clientSecret", "credentialsJSON:68eb3c3c-c0a1-4694-af1f-92f7f89081f5")
+            param("agent_pool_id", "-2")
+            param("credentialsType", "service")
+            param("description", "")
+            param("cloud-code", "arm")
+            param("enabled", "true")
+            param("environment", "AZURE")
+            param("profileId", "arm-1")
+            param("name", "Azure Cloud Profile")
+            param("tenantId", "080e4d1b-3521-4847-94da-37050321d1ad")
+            param("subscriptionId", "759c9fa9-8b8a-4ebf-a162-52b3b8da0936")
+            param("terminate-idle-time", "30")
+        }
     }
 }
 
