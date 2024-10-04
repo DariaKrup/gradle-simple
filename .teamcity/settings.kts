@@ -1,6 +1,7 @@
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
 import jetbrains.buildServer.configs.kotlin.buildSteps.gradle
+import jetbrains.buildServer.configs.kotlin.kubernetesCloudProfile
 import jetbrains.buildServer.configs.kotlin.projectFeatures.activeStorage
 import jetbrains.buildServer.configs.kotlin.projectFeatures.awsConnection
 import jetbrains.buildServer.configs.kotlin.projectFeatures.azureConnection
@@ -102,6 +103,17 @@ project {
             param("tenantId", "080e4d1b-3521-4847-94da-37050321d1ad")
             param("subscriptionId", "759c9fa9-8b8a-4ebf-a162-52b3b8da0936")
             param("terminate-idle-time", "30")
+        }
+        kubernetesCloudProfile {
+            id = "kube-1"
+            name = "Kube"
+            terminateIdleMinutes = 30
+            apiServerURL = "https://A51B42A65F7E54005C95A4D353916627.gr7.eu-west-1.eks.amazonaws.com"
+            authStrategy = eks {
+                accessId = "AKIA5JH2VERVI62P5XDY"
+                secretKey = "credentialsJSON:b6bf9554-612c-4b76-b5f9-29e715daa4d2"
+                clusterName = "tc-dkrupkina-eks-cluster"
+            }
         }
     }
 }
