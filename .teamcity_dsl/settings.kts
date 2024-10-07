@@ -53,6 +53,7 @@ project {
                 spec:
                   containers:
                     - name: template-container
+                    - name: agent-container
                       image: jetbrains/teamcity-agent:2024.07-linux
                       resources:
                         requests:
