@@ -139,10 +139,7 @@ project {
             name = "AWS EC2: keys, update"
             terminateIdleMinutes = 30
             region = AmazonEC2CloudProfile.Regions.EU_WEST_DUBLIN
-            authType = accessKey {
-                keyId = "credentialsJSON:4c28e359-a90a-4576-845b-ab97eed8c1f3"
-                secretKey = "credentialsJSON:081b195d-2f89-4789-ab0f-2b728858b0de"
-            }
+            awsConnectionId = "AwsEc2GradleSimple_AmazonWebServicesAws"
         }
         amazonEC2CloudProfile {
             id = "amazon-2"
