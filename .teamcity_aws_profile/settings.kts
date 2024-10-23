@@ -134,6 +134,20 @@ project {
             )
             source = Source("ami-0817025aa39c203c6")
         }
+        amazonEC2CloudImage {
+            id = "PROJECT_EXT_8"
+            profileId = "amazon-1"
+            agentPoolId = "-2"
+            name = "Ubuntu: old (upd connection)"
+            vpcSubnetId = "subnet-043178c302cabfe37"
+            keyPairName = "daria.krupkina"
+            instanceType = "t2.medium"
+            securityGroups = listOf("sg-072d8bfa0626ea2a6")
+            instanceTags = mapOf(
+                "Owner" to "daria.krupkina@jetbrains.com"
+            )
+            source = Source("ami-0817025aa39c203c6")
+        }
         amazonEC2CloudProfile {
             id = "amazon-1"
             name = "AWS EC2: keys, update"
