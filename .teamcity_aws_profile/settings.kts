@@ -170,6 +170,7 @@ project {
             name = "AWS EC2: chain, update"
             terminateIdleMinutes = 30
             region = AmazonEC2CloudProfile.Regions.EU_WEST_DUBLIN
+            awsConnectionId = "AwsEc2GradleSimple_AmazonWebServicesAws"
             authType = instanceIAMRole()
         }
         amazonEC2CloudProfile {
