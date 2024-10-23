@@ -27,7 +27,7 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 'Debug' option is available in the context menu for the task.
 */
 
-version = "2024.03"
+version = "2024.07"
 
 project {
 
@@ -86,6 +86,20 @@ project {
             name = "Ubuntu"
             vpcSubnetId = "subnet-043178c302cabfe37"
             iamProfile = "dkrupkinaEc2Role"
+            keyPairName = "daria.krupkina"
+            instanceType = "t2.medium"
+            securityGroups = listOf("sg-072d8bfa0626ea2a6")
+            instanceTags = mapOf(
+                "Owner" to "daria.krupkina@jetbrains.com"
+            )
+            source = Source("ami-0817025aa39c203c6")
+        }
+        amazonEC2CloudImage {
+            id = "PROJECT_EXT_6"
+            profileId = "amazon-2"
+            agentPoolId = "-2"
+            name = "Ubuntu: new"
+            vpcSubnetId = "subnet-043178c302cabfe37"
             keyPairName = "daria.krupkina"
             instanceType = "t2.medium"
             securityGroups = listOf("sg-072d8bfa0626ea2a6")
