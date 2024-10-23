@@ -3,6 +3,7 @@ import jetbrains.buildServer.configs.kotlin.amazonEC2CloudImage
 import jetbrains.buildServer.configs.kotlin.amazonEC2CloudProfile
 import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
 import jetbrains.buildServer.configs.kotlin.buildSteps.gradle
+import jetbrains.buildServer.configs.kotlin.projectFeatures.awsConnection
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 
 /*
@@ -34,6 +35,17 @@ project {
     buildType(Build)
 
     features {
+        awsConnection {
+            id = "AwsEc2GradleSimple_AmazonWebServicesAws"
+            name = "Amazon Web Services (AWS)"
+            regionName = "eu-west-1"
+            credentialsType = static {
+                accessKeyId = "AKIA5JH2VERVI62P5XDY"
+                secretAccessKey = "credentialsJSON:081b195d-2f89-4789-ab0f-2b728858b0de"
+                stsEndpoint = "https://sts.eu-west-1.amazonaws.com"
+            }
+            allowInBuilds = false
+        }
         amazonEC2CloudImage {
             id = "PROJECT_EXT_2"
             profileId = "amazon-1"
