@@ -47,7 +47,12 @@ project {
                       # To modify the volume used to run the build, add a volume with the name agent-volume
                     - name: template-container
             """.trimIndent()
+            buildsLimit = "2"
+            description = "Local (created in this project) connection to K8S"
+            serverURL = "http://10.128.93.57:8281/"
+            containerParameters = "RunOnExecutor=yes"
             templateName = "podtemplates"
+            param("system.cloud.profile_id", "PROJECT_EXT_43")
         }
     }
 }
