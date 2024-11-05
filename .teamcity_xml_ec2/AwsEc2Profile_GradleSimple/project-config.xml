@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="AwsEc2Profile" uuid="" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>Gradle Simple</name>
+  <parameters />
+  <project-extensions>
+    <extension id="AwsEc2Profile_GradleSimple_AmazonWebServicesAws" type="OAuthProvider">
+      <parameters>
+        <param name="awsAllowedInBuilds" value="false" />
+        <param name="awsAllowedInSubProjects" value="false" />
+        <param name="awsConnectionId" value="AmazonWebServicesAws_2" />
+        <param name="awsCredentialsType" value="awsAssumeIamRole" />
+        <param name="awsIamRoleArn" value="arn:aws:iam::913206223978:role/dkrupkinaEc2Role" />
+        <param name="awsIamRoleSessionName" value="TeamCity-session" />
+        <param name="awsRegionName" value="eu-west-1" />
+        <param name="awsSessionCredentials" value="true" />
+        <param name="awsStsEndpoint" value="https://sts.eu-west-1.amazonaws.com" />
+        <param name="displayName" value="Amazon Web Services (AWS)" />
+        <param name="providerType" value="AWS" />
+      </parameters>
+    </extension>
+    <extension id="AwsEc2Profile_GradleSimple_AmazonWebServicesAwsFromSecondaryNode" type="OAuthProvider">
+      <parameters>
+        <param name="awsAccessKeyId" value="AKIA5JH2VERVI62P5XDY" />
+        <param name="awsAllowedInBuilds" value="false" />
+        <param name="awsAllowedInSubProjects" value="false" />
+        <param name="awsCredentialsType" value="awsAccessKeys" />
+        <param name="awsIamRoleSessionName" value="TeamCity-session" />
+        <param name="awsRegionName" value="eu-west-1" />
+        <param name="awsSessionCredentials" value="true" />
+        <param name="awsStsEndpoint" value="https://sts.eu-west-1.amazonaws.com" />
+        <param name="displayName" value="Amazon Web Services (AWS): from secondary node" />
+        <param name="providerType" value="AWS" />
+        <param name="secure:awsSecretAccessKey" value="credentialsJSON:5956c87f-9f8f-4ec4-8c89-2874bed09e35" />
+      </parameters>
+    </extension>
+    <extension id="AzureArtifactsGradleSimple_AzureCloud" type="OAuthProvider">
+      <parameters>
+        <param name="azureCredentialsType" value="msal" />
+        <param name="clientId" value="b6f82b73-e2ed-4a4a-8091-2f150dc41274" />
+        <param name="connectionId" value="AzureArtifactsGradleSimple_AzureCloud" />
+        <param name="displayName" value="Azure Cloud" />
+        <param name="msalAuthority" value="https://login.microsoftonline.com/080e4d1b-3521-4847-94da-37050321d1ad" />
+        <param name="providerType" value="Azure" />
+        <param name="secure:clientSecret" value="credentialsJSON:68eb3c3c-c0a1-4694-af1f-92f7f89081f5" />
+      </parameters>
+    </extension>
+    <extension id="AzureArtifactsGradleSimple_AzureCloudLocal" type="OAuthProvider">
+      <parameters>
+        <param name="azureCredentialsType" value="default" />
+        <param name="connectionId" value="AzureArtifactsGradleSimple_AzureCloudLocal" />
+        <param name="displayName" value="Azure Cloud (Local)" />
+        <param name="providerType" value="Azure" />
+      </parameters>
+    </extension>
+    <extension id="AzureLocalStorageGradle" type="storage_settings">
+      <parameters>
+        <param name="azure_cdn_endpoint" value="https://artifacts.azureedge.net" />
+        <param name="azure_connection_id" value="AzureCloudMicrosoftMsal" />
+        <param name="azure_storage_account" value="https://storagedkrupkina.blob.core.windows.net/" />
+        <param name="azure_storage_container" value="artifacts" />
+        <param name="multipart_initial_transfer_size" value="12MB" />
+        <param name="multipart_maximum_transfer_size" value="10MB" />
+        <param name="storage.name" value="Local Azure Storage" />
+        <param name="storage.type" value="azure-storage-account" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_1" type="versionedSettings">
+      <parameters>
+        <param name="buildSettings" value="ALWAYS_USE_CURRENT" />
+        <param name="credentialsStorageType" value="credentialsJSON" />
+        <param name="enabled" value="true" />
+        <param name="ignoreChangesInDependenciesAndVcsSettings" value="false" />
+        <param name="rootId" value="AwsEc2Profile_GradleSimple_HttpsGithubComDariaKrupGradleSimpleGitRefsHeadsMaster" />
+        <param name="settingsPath" value=".teamcity_xml_ec2" />
+        <param name="showChanges" value="false" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_23" type="active_storage">
+      <parameters>
+        <param name="active.storage.feature.id" value="S3_atrifacts" />
+      </parameters>
+    </extension>
+    <extension id="S3_atrifacts" type="storage_settings">
+      <parameters>
+        <param name="aws.environment" value="" />
+        <param name="aws.external.id" value="TeamCity-server-ab0a7739-062f-45e8-b524-843dec929704" />
+        <param name="aws.service.endpoint" value="" />
+        <param name="awsConnectionId" value="AmazonWebServicesAws_2" />
+        <param name="storage.name" value="S3 Storage" />
+        <param name="storage.s3.bucket.name" value="tc-dkrupkina-limited-access" />
+        <param name="storage.s3.bucket.name.wasProvidedAsString" value="true" />
+        <param name="storage.s3.forceVirtualHostAddressing" value="true" />
+        <param name="storage.s3.upload.multipart_chunksize" value="5 G B" />
+        <param name="storage.s3.upload.multipart_threshold" value="5 G B" />
+        <param name="storage.s3.upload.presignedUrl.enabled" value="true" />
+        <param name="storage.s3.verifyIntegrityAfterUpload" value="true" />
+        <param name="storage.type" value="S3_storage" />
+      </parameters>
+    </extension>
+    <extension id="amazon-25" type="CloudProfile">
+      <parameters>
+        <param name="awsConnectionId" value="AwsEc2Profile_GradleSimple_AmazonWebServicesAwsFromSecondaryNode" />
+        <param name="cloud-code" value="amazon" />
+        <param name="description" value="" />
+        <param name="enabled" value="true" />
+        <param name="name" value="AWS EC2 (secondary node)" />
+        <param name="profileId" value="amazon-25" />
+        <param name="region" value="eu-west-1" />
+        <param name="terminate-idle-time" value="30" />
+        <param name="use-instance-iam-role" value="false" />
+      </parameters>
+    </extension>
+    <extension id="amazon-26" type="CloudProfile">
+      <parameters>
+        <param name="awsConnectionId" value="AwsEc2Profile_GradleSimple_AmazonWebServicesAws" />
+        <param name="cloud-code" value="amazon" />
+        <param name="description" value="" />
+        <param name="enabled" value="true" />
+        <param name="name" value="AWS EC2 IAM Secondary Node" />
+        <param name="profileId" value="amazon-26" />
+        <param name="region" value="eu-west-1" />
+        <param name="terminate-idle-time" value="30" />
+        <param name="use-instance-iam-role" value="false" />
+      </parameters>
+    </extension>
+    <extension id="arm-1" type="CloudProfile">
+      <parameters>
+        <param name="agent_pool_id" value="-2" />
+        <param name="clientId" value="b6f82b73-e2ed-4a4a-8091-2f150dc41274" />
+        <param name="cloud-code" value="arm" />
+        <param name="credentialsType" value="service" />
+        <param name="description" value="" />
+        <param name="enabled" value="true" />
+        <param name="environment" value="AZURE" />
+        <param name="name" value="Azure Cloud Profile" />
+        <param name="profileId" value="arm-1" />
+        <param name="secure:clientSecret" value="credentialsJSON:68eb3c3c-c0a1-4694-af1f-92f7f89081f5" />
+        <param name="subscriptionId" value="759c9fa9-8b8a-4ebf-a162-52b3b8da0936" />
+        <param name="tenantId" value="080e4d1b-3521-4847-94da-37050321d1ad" />
+        <param name="terminate-idle-time" value="30" />
+      </parameters>
+    </extension>
+    <extension id="kube-1" type="CloudProfile">
+      <parameters>
+        <param name="apiServerUrl" value="https://A51B42A65F7E54005C95A4D353916627.gr7.eu-west-1.eks.amazonaws.com" />
+        <param name="authStrategy" value="eks" />
+        <param name="cloud-code" value="kube" />
+        <param name="description" value="" />
+        <param name="eksAccessId" value="AKIA5JH2VERVI62P5XDY" />
+        <param name="eksClusterName" value="tc-dkrupkina-eks-cluster" />
+        <param name="eksIAMRoleArn" value="" />
+        <param name="enabled" value="true" />
+        <param name="name" value="Kube" />
+        <param name="namespace" value="" />
+        <param name="next-hour" value="" />
+        <param name="profileId" value="kube-1" />
+        <param name="profileInstanceLimit" value="" />
+        <param name="profileServerUrl" value="" />
+        <param name="secure:caCertData" value="" />
+        <param name="secure:eksSecretKey" value="credentialsJSON:b6bf9554-612c-4b76-b5f9-29e715daa4d2" />
+        <param name="system.cloud.profile_id" value="kube-1" />
+        <param name="terminate-idle-time" value="30" />
+        <param name="total-work-time" value="" />
+      </parameters>
+    </extension>
+  </project-extensions>
+  <cleanup />
+</project>
+
