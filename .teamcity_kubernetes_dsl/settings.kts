@@ -50,7 +50,7 @@ project {
             buildsLimit = "2"
             description = "Local (created in this project) connection to K8S"
             serverURL = "http://10.128.93.57:8281/"
-            containerParameters = "RunOnExecutor=yes"
+            containerParameters = "RunOnExecutor=yes, Docker=yes"
             templateName = "podtemplates"
             param("system.cloud.profile_id", "PROJECT_EXT_43")
         }
