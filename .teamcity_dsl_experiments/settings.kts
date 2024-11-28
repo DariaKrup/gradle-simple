@@ -31,6 +31,10 @@ version = "2024.07"
 project {
 
     buildType(Build)
+
+    params {
+        param("parameter", "a")
+    }
 }
 
 object Build : BuildType({
