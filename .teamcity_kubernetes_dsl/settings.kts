@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.amazonEC2CloudImage
 import jetbrains.buildServer.configs.kotlin.amazonEC2CloudProfile
 import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
 import jetbrains.buildServer.configs.kotlin.buildSteps.gradle
@@ -34,6 +35,20 @@ project {
     buildType(Build)
 
     features {
+        amazonEC2CloudImage {
+            id = "PROJECT_EXT_116"
+            profileId = "amazon-29"
+            agentPoolId = "-2"
+            name = "Ubuntu Agent"
+            vpcSubnetId = "subnet-0c23f411b0800b216"
+            keyPairName = "daria.krupkina"
+            instanceType = "t2.medium"
+            securityGroups = listOf("sg-072d8bfa0626ea2a6")
+            instanceTags = mapOf(
+                "Owner" to "daria.krupkina@gmail.com"
+            )
+            source = Source("ami-0817025aa39c203c6")
+        }
         kubernetesExecutor {
             id = "PROJECT_EXT_43"
             connectionId = "PROJECT_EXT_2"
