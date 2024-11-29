@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.amazonEC2CloudProfile
 import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
 import jetbrains.buildServer.configs.kotlin.buildSteps.gradle
 import jetbrains.buildServer.configs.kotlin.projectFeatures.kubernetesExecutor
@@ -53,6 +54,14 @@ project {
             containerParameters = "RunOnExecutor=yes, Docker=yes"
             templateName = "podtemplates"
             param("system.cloud.profile_id", "PROJECT_EXT_43")
+        }
+        amazonEC2CloudProfile {
+            id = "amazon-29"
+            name = "AWS EC2"
+            serverURL = "http://10.128.93.57:8281/"
+            terminateIdleMinutes = 30
+            region = AmazonEC2CloudProfile.Regions.EU_WEST_DUBLIN
+            awsConnectionId = "AmazonWebServicesAws_2"
         }
     }
 }
