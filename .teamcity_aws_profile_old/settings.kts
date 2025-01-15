@@ -1,6 +1,7 @@
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.amazonEC2CloudProfile
 import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
+import jetbrains.buildServer.configs.kotlin.projectFeatures.awsConnection
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 
 /*
@@ -25,13 +26,25 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 'Debug' option is available in the context menu for the task.
 */
 
-version = "2024.03"
+version = "2024.12"
 
 project {
 
     buildType(Build)
 
     features {
+        awsConnection {
+            id = "GradleSimple_AmazonWebServicesAws"
+            name = "Amazon Web Services (AWS)"
+            regionName = "eu-west-1"
+            credentialsType = static {
+                accessKeyId = "AKIA5JH2VERVI62P5XDY"
+                secretAccessKey = "credentialsJSON:2f76af04-fbfe-4bf8-9a00-63b984b417d9"
+            }
+            allowInSubProjects = true
+            allowInBuilds = true
+            stsEndpoint = "https://sts.eu-west-1.amazonaws.com"
+        }
         amazonEC2CloudProfile {
             id = "amazon-1"
             name = "AWS EC2 (Ireland)"
