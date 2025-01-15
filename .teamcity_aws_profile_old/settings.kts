@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.amazonEC2CloudProfile
 import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 
@@ -29,6 +30,19 @@ version = "2024.03"
 project {
 
     buildType(Build)
+
+    features {
+        amazonEC2CloudProfile {
+            id = "amazon-1"
+            name = "AWS EC2 (Ireland)"
+            terminateIdleMinutes = 30
+            region = AmazonEC2CloudProfile.Regions.EU_WEST_DUBLIN
+            authType = accessKey {
+                keyId = "credentialsJSON:eb5b369d-0ff2-42c6-8a43-4c9e7cd25def"
+                secretKey = "credentialsJSON:2f76af04-fbfe-4bf8-9a00-63b984b417d9"
+            }
+        }
+    }
 }
 
 object Build : BuildType({
