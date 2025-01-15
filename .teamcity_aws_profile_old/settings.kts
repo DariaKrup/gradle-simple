@@ -65,6 +65,13 @@ project {
                 secretKey = "credentialsJSON:2f76af04-fbfe-4bf8-9a00-63b984b417d9"
             }
         }
+        amazonEC2CloudProfile {
+            id = "amazon-4"
+            name = "AWS"
+            terminateIdleMinutes = 30
+            region = AmazonEC2CloudProfile.Regions.EU_WEST_DUBLIN
+            awsConnectionId = "GradleSimple_AmazonWebServicesAws"
+        }
     }
 }
 
