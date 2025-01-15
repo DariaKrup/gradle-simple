@@ -42,6 +42,16 @@ project {
                 secretKey = "credentialsJSON:2f76af04-fbfe-4bf8-9a00-63b984b417d9"
             }
         }
+        amazonEC2CloudProfile {
+            id = "amazon-2"
+            name = "AWS EC2 (default)"
+            terminateIdleMinutes = 30
+            region = AmazonEC2CloudProfile.Regions.US_EAST_N_VIRGINIA
+            authType = accessKey {
+                keyId = "credentialsJSON:eb5b369d-0ff2-42c6-8a43-4c9e7cd25def"
+                secretKey = "credentialsJSON:2f76af04-fbfe-4bf8-9a00-63b984b417d9"
+            }
+        }
     }
 }
 
