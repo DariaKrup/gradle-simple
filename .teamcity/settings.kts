@@ -49,7 +49,6 @@ project {
 
 object Build : BuildType({
     name = "Build"
-    paused = true
 
     artifactRules = "**/* => sources.zip"
 
