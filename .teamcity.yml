@@ -1,0 +1,10 @@
+jobs:
+  Job1:
+    name: Job Gradle
+    steps:
+      - type: gradle
+        tasks: clean test
+    runs-on:
+      self-hosted:
+        - cpu: 1
+    allow-reuse: false
