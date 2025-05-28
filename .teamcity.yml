@@ -4,6 +4,7 @@ jobs:
     steps:
       - type: gradle
         tasks: clean test
+        enable-stacktrace: 'true'
     runs-on:
       self-hosted:
         - cpu: 1
