@@ -7,5 +7,5 @@ jobs:
         enable-stacktrace: 'true'
     runs-on:
       self-hosted:
-        - cpu: 1
+        - cpu: 4
     allow-reuse: false
