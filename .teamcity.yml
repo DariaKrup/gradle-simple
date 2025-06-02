@@ -5,10 +5,5 @@ jobs:
       - type: gradle
         tasks: clean test
         enable-stacktrace: 'true'
-    runs-on:
-      self-hosted:
-        - requirement: equals
-          name: CPU count
-          parameter: teamcity.agent.hardware.cpuCount
-          value: '4'
+    runs-on: self-hosted
     allow-reuse: false
