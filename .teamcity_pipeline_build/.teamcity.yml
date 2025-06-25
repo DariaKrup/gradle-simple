@@ -1,0 +1,11 @@
+jobs:
+  Job1:
+    name: Job Gradle
+    steps:
+      - type: gradle
+        tasks: clean test
+        enable-stacktrace: 'true'
+    runs-on: self-hosted
+    allow-reuse: false
+secrets:
+  password: credentialsJSON:6095d48b-1521-4b72-968d-5b63c387ba84
