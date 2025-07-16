@@ -1,0 +1,14 @@
+jobs:
+  Job1:
+    name: Job 1
+    steps:
+      - type: gradle
+        name: clean build
+        tasks: clean build
+        use-gradle-wrapper: 'true'
+    runs-on:
+      self-hosted:
+        - requirement: equals
+          name: OS
+          parameter: teamcity.agent.jvm.os.name
+          value: Linux

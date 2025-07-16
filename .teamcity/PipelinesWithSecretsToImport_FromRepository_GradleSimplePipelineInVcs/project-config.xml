@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="PipelinesWithSecretsToImport_FromRepository" uuid="7fd385d2-0653-4b0d-8e80-26f90193b43f" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2025.3/project-config.xsd">
+  <name>Gradle Simple: pipeline in VCS</name>
+  <parameters>
+    <param name="teamcity.projectCredentials.storageType" value="credentialsJSON" />
+  </parameters>
+  <project-extensions>
+    <extension id="PROJECT_EXT_379" type="versionedSettings">
+      <parameters>
+        <param name="buildSettings" value="PREFER_VCS" />
+        <param name="credentialsStorageType" value="credentialsJSON" />
+        <param name="enabled" value="true" />
+        <param name="format" value="pipelines-yaml" />
+        <param name="ignoreChangesInDependenciesAndVcsSettings" value="false" />
+        <param name="rootId" value="PipelinesWithSecretsToImport_FromRepository_GradleSimplePipelineInVcs_Main" />
+        <param name="showChanges" value="false" />
+        <param name="useRelativeIds" value="true" />
+      </parameters>
+    </extension>
+  </project-extensions>
+</project>
+
