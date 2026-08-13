@@ -11,4 +11,12 @@ public class SimpleTest {
 
         assertEquals("onetwo", result);
     }
+
+    @Test
+    public void testConcatenateLonger() {
+        String result = "extremelyamazing";
+        result = result.concat("longlongword");
+
+        assertEquals("extremelyamazinglonglongword", result);
+    }
 }
